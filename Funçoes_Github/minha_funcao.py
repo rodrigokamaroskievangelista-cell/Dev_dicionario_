@@ -10,10 +10,21 @@
 #     # print(local)
 #     print(Geral)
 
-nome = "Alan"
+nome = "Alan" # Global #Rua ou Publico
 
 def saudacao():
     sobrenome = 'code' #Local
-    print(f"Olá {nome} {sobrenome}")
-
+    print(f"Olá, {nome} {sobrenome}")
 saudacao()
+
+def somar(n1, n2):
+    print(f"A soma: {n1 + n2}") # n1 e n2 sao o parâmetros
+somar (6,40) # 6 e 40 sao os argumentos
+
+def formatar_real(valor):
+    return f"R$ {valor:.2f}".replace(",", "X").replace("." , ",").replace("X" , ".") 
+#replace substituir ("," passa a ser ".")
+
+#uso:
+preco_hospedagem = 49.90
+print(formatar_real(preco_hospedagem)) # R$ 49.90
