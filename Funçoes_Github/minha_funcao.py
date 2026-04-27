@@ -9,3 +9,11 @@
     
 #     # print(local)
 #     print(Geral)
+
+nome = "Alan"
+
+def saudacao():
+    sobrenome = 'code' #Local
+    print(f"Olá {nome} {sobrenome}")
+
+saudacao()
