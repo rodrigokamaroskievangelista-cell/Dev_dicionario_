@@ -1,5 +1,5 @@
 def calcular_media(n1, n2, n3):
-    media = (n1 + n2, n3) / 3
+    media = (n1 + n2 + n3) / 3
     return media
 
 n1 = float(input("Digite a primeira nota: "))
