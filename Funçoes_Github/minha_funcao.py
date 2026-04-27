@@ -25,5 +25,5 @@ def formatar_real(valor):
     return f"R$ {valor:.2f}".replace(",", "X").replace("." , ",").replace("X" , ".") 
 #replace substituir ("," passa a ser ".")
 #uso:
-preco_hospedagem = 49.90
-print(formatar_real(preco_hospedagem)) # R$ 49.90
+preco_hospedagem = 1250.90
+print(formatar_real(preco_hospedagem)) # R$ 1250.90
