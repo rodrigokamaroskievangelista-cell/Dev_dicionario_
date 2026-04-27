@@ -24,7 +24,6 @@ somar (6,40) # 6 e 40 sao os argumentos
 def formatar_real(valor):
     return f"R$ {valor:.2f}".replace(",", "X").replace("." , ",").replace("X" , ".") 
 #replace substituir ("," passa a ser ".")
-
 #uso:
 preco_hospedagem = 49.90
 print(formatar_real(preco_hospedagem)) # R$ 49.90
