@@ -1,2 +1,2 @@
 #test
-print("Olá, mundo!")
+print("Olá, mundo! Funções em Python")
