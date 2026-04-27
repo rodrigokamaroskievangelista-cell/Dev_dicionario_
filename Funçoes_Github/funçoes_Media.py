@@ -8,3 +8,5 @@ n3 = float(input("Digite a terceira nota: "))
 
 media = calcular_media(n1, n2, n3)
 print("A média é:", media)
+
+#Atualizado
