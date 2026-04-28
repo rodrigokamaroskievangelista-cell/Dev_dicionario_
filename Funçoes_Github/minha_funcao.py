@@ -27,3 +27,5 @@ def formatar_real(valor):
 #uso:
 preco_hospedagem = 1250.90
 print(formatar_real(preco_hospedagem)) # R$ 1250.90
+
+## atualizado
