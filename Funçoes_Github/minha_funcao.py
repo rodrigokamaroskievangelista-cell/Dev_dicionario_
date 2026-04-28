@@ -6,7 +6,7 @@
 
 #     #Chamar minha funçao
 #     minha_funcao()
-    
+
 #     # print(local)
 #     print(Geral)
 
