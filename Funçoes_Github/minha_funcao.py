@@ -22,8 +22,12 @@ def somar(n1, n2):
 somar (6,40) # 6 e 40 sao os argumentos
 
 def formatar_real(valor):
-    return f"R$ {valor:.2f}".replace(",", "X").replace("." , ",").replace("X" , ".") 
+    texto = f"R$ {valor:.2f}"
+    texto = texto.replace(",","X")
+    texto = texto.replace(".", ".")
+    texto = texto.replace("X", ".")
 #replace substituir ("," passa a ser ".")
+
 #uso:
-preco_hospedagem = 1250.90
-print(formatar_real(preco_hospedagem)) # R$ 1250.90
+preco_hospedagem = 1234.50
+print(formatar_real(preco_hospedagem)) # R$ 1234.50
