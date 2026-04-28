@@ -1,12 +1,3 @@
-def somar_tudo(*numero):
-    return sum(numero)
-
-print(somar_tudo(1, 2))
-print(somar_tudo(1, 2, 3, 4))
-print(somar_tudo(10, 20,))
-
-print(50*"=")
-
 # Criando um Dicionario
 
 produto = {"nome": "Teclado", "preco": 150, "em_estoque": True}
