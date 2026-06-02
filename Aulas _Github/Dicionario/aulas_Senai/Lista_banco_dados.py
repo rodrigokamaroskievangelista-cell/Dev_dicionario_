@@ -1,5 +1,11 @@
 # Nosso "Banco de Dados" de Usuarios
 
+# Nome1 [0] Email [1] Idade [2]
+# Nome2 [1] Email [1] Idade [2]
+# Nome3 [2] Email [1] Idade [2]
+# Nome4 [3] Email [1] Idade [2]
+
+
 # 1 exercicio: Criar um Dicionário para armazenar os dados dos usuários
 print("1 ----- Atividade -----")
 print("\n")
