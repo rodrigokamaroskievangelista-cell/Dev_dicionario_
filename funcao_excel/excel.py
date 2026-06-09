@@ -13,7 +13,7 @@ alunos = [
     ("Rodrigo", 85),
     ("Gustavo", 55),
     ("Beatriz", 34),
-    ("Rafael", 65),
+    ("Rafael", 25),
     ("Camila", 75),
     ("Bruno", 45),
     ("Larissa", 82),
@@ -21,10 +21,31 @@ alunos = [
     ("Sofia", 90),
     ("Diego", 58)
 ]
-print(f"{'Aluno':<10} {'Nota':<5} {'Situação':<10}")
-print("-" * 30)
+print(f"{'Aluno':<10} {'Nota':<5} {'Situação ':<10}")
+print("-" * 36)
 
 for nome,nota in alunos:
-    situacao = se(nota >= 60, "Aprovado", "Reprovado")
+    situacao = se(nota >= 70, "Aprovado\t 🟢", se(nota >= 50, "Recuperação\t 🟡", "Reprovado\t 🔴"))
     print(f"{nome:<10} {nota:<5} {situacao:<10}")
 
+print("-" * 36)
+
+
+print("---- Boletim escolar final ---- ")
+
+aprovados = 0
+recuperacao = 0
+reprovados = 0 
+
+for nome,nota in alunos:
+    if nota >= 70:
+        aprovados += 1
+    elif nota >= 50:
+        recuperacao += 1
+    else:
+        reprovados += 1
+
+print(f"Total de alunos: {len(alunos)}")
+print(f"Alunos aprovados: {aprovados}")
+print(f"Alunos em recuperação: {recuperacao}")
+print(f"Alunos reprovados: {reprovados}")
