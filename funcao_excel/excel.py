@@ -31,7 +31,7 @@ for nome,nota in alunos:
 print("-" * 36)
 
 
-print("---- Status de Alunos ---- \n")
+print(f"{'='*7} Status de Alunos {'='*7}\n")
 
 aprovados = 0
 recuperacao = 0
