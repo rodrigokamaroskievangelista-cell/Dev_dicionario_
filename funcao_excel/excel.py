@@ -31,7 +31,7 @@ for nome,nota in alunos:
 print("-" * 36)
 
 
-print("---- Boletim escolar final ---- ")
+print("---- Status de Alunos ---- \n")
 
 aprovados = 0
 recuperacao = 0
