@@ -1,0 +1,4 @@
+ti, rodrigo, 15120.00, gerente, 1545120.00
+Vendas, carlao, 15181.00, Gerente, 15184.00
+Vendas, ,juliao, 154121.00, gerente, 15135481.00
+Animal | cavalo | 0.00 | Escravo | 0.00
