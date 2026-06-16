@@ -13,7 +13,7 @@ def cadastrar_funcionario():
     cargo = str (input("Cargo (Gerente/Analista): "))
     bonus = float (input("Bônus (Ex: 850.00): R$"))
 
-    linha = f"{setor} | {nome} | {salario:.2f} | {cargo} | {bonus:.2f}\n"
+    linha = f"{setor}, {nome}, {salario:.2f}, {cargo}, {bonus:.2f}\n"
 
     with open("funcionarios.txt","a", encoding="utf-8") as arquivo: arquivo.write(linha)
 
