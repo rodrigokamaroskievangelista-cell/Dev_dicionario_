@@ -130,6 +130,6 @@ if __name__ == "__main__":
             achou = buscar_nome(nome,busca)
             print("Encontrado!")  if achou else "Não encontrado!"
 
-        elif opcao == "3":
+        elif opcao == "4":
             salvar_nome(nomes)
             print("Salvo...")
