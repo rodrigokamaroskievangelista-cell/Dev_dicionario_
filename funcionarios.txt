@@ -1,2 +1,0 @@
-TI | rodrigo | 1542.00 | gerente | 1520.00
-TI, rodrigo, 12450.00, Estagio, 850.00
