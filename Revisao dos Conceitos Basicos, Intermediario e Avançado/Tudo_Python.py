@@ -1,61 +1,87 @@
-# 1 - Variavel que recebe entrada via input
-# e imprime o nome na tela
+# =====================================================
+# 1 - VARIÁVEL QUE RECEBE ENTRADA VIA INPUT
+#     E IMPRIME O NOME NA TELA
+# =====================================================
 
 nome = input("Digite seu Nome: ")
 print(f"Olá! {nome}")
 
-# 2 - lista de laço While
-# Agora guardamos varios Nomes
-nomes = []
-# While cria um laço infinito = só para o "Break" .
 
+# =====================================================
+# 2 - LISTA E LAÇO WHILE
+#     AGORA GUARDAMOS VÁRIOS NOMES
+# =====================================================
+
+nomes = []
+
+# While cria um laço infinito = só para com o "break".
 while True:
-    nome = input ("Digite seu Nome (Ou 'sair' para Terminar): ")
+    nome = input("Digite seu Nome (Ou 'sair' para Terminar): ")
 
     if nome == "sair":
         break
+
     nomes.append(nome)
 
 for i in nomes:
     print(f"Nomes: {i}")
 
-# 3 - Busca de nomes (Usando 'in' e 'for').
+
+# =====================================================
+# 3 - BUSCA DE NOMES (USANDO 'in' E 'for')
+# =====================================================
+
 busca = input("Pesquisar Nome: ")
 
-# 'in' verifica se o valor exite dentro da lista [].
-if busca in nomes: 
+# 'in' verifica se o valor existe dentro da lista [].
+if busca in nomes:
     print(f"{busca} não está na lista")
 else:
     print(f"{busca} não esta na lista")
 
-# 'for' e usado para percorrer toda a lista (Banco de Dados).
-for indice,nomenclatura in enumerate(nomes, 1):
+# 'for' é usado para percorrer toda a lista (Banco de Dados).
+for indice, nomenclatura in enumerate(nomes, 1):
     print(f"{indice}.{nomenclatura}")
 
-# 4 - Salvar e carregar como arquivo de texto (Cria um arquivo Nome.txt).
-with open("Nome.txt", "w", encoding="uft-8") as arquivo: 
+
+# =====================================================
+# 4 - SALVAR E CARREGAR COMO ARQUIVO DE TEXTO
+#     (CRIA UM ARQUIVO Nome.txt)
+# =====================================================
+
+with open("Nome.txt", "w", encoding="uft-8") as arquivo:
     for nome in nomes:
         arquivo.write(nome + "\n")
+
 print(f"Nome salvos com Sucesso!")
 
-# Exibir os nomes do arquivo nome.txt (Read - lêr )
+# Exibir os nomes do arquivo Nome.txt (Read = ler)
 with open("Nome.txt", "w", encoding="uft-8") as arquivo:
     nomes_carregados = arquivo.read().splitlines
 
 print("Nomes carregados: ", nomes_carregados)
 
-# 5 - Tratatamentos de erros.
+
+# =====================================================
+# 5 - TRATAMENTO DE ERROS
+# =====================================================
+
 try:
-    # Try ( executa o codigo caso contrario executa o except ).
+    # Try executa o código.
+    # Caso ocorra erro, executa o except.
     with open("nomes.txt", "r", encoding="uft-8") as f:
         nomes = f.read().splitlines
+
 except FileNotFoundError:
-    # ( except - mostrar o Erro e nao executa ) arquivo nao  exite ainda - começa a lista vazia.
+    # Arquivo não existe ainda.
+    # Começa com a lista vazia.
     print("Arquivo nao encontrado. Iniciando vazio.")
     nome = []
 
-# Validaçao: nome não poder ser vazio ou só com espaços
-# Raise - define um nome personalizado.
+# Validação:
+# Nome não pode ser vazio ou conter apenas espaços.
+
+# Raise define um erro personalizado.
 def validar_nome(nome):
     if not nome.strip():
         raise ValueError("Nome não pode ser vazio!")
@@ -64,12 +90,18 @@ def validar_nome(nome):
 try:
     nomes = validar_nome(input("Nome: "))
     nome.append(nome)
+
 except ValueError as e:
     print(f"Erro: {e}")
 
-# 6 - organizaçao com funções 
-# Cada função faz UMA coisa - principios Basicos
-# Cada função tem o nome que descreve o que ela faz.
+
+# =====================================================
+# 6 - ORGANIZAÇÃO COM FUNÇÕES
+# =====================================================
+
+# Cada função faz UMA coisa.
+# Princípio básico de organização.
+# O nome da função deve descrever o que ela faz.
 
 ARQUIVO = "nome.tx"
 
@@ -77,58 +109,72 @@ def carregar_nome():
     try:
         with open(ARQUIVO, "f", encoding="utf-8") as f:
             return f.read().splitlines()
+
     except FileNotFoundError:
         return []
-    
+
 def salvar_nome(nomes):
-    with open(ARQUIVO,"w", encoding="utf-8") as f:
+    with open(ARQUIVO, "w", encoding="utf-8") as f:
         for nome in nomes:
             f.write(nome + "\n")
 
-def adicionar_nome(nomes,nome): 
+def adicionar_nome(nomes, nome):
     if not nome.strip():
         raise ValueError("Nome vazio.")
+
     nome.append(nome.strip())
 
-def buscar_nome(nomes,busca):
+def buscar_nome(nomes, busca):
     return busca in nomes
 
 def lista_nomes(nomes):
-    for i,n in enumerate(nomes,1):
+    for i, n in enumerate(nomes, 1):
         print(f"{i},{n} ")
         nome = carregar_nome()
 
-# 7 - Criaçao do Menu (FUNÇÃO) com todas as funçoes.
+
+# =====================================================
+# 7 - CRIAÇÃO DO MENU (FUNÇÃO)
+# =====================================================
 
 def Menu():
 
     print("\n--- Cadastro de Nomes ---")
-    print("1. Adicionar Nomes ")
-    print("2. Listar Nomes ")
-    print("3. Buscar Nome ")
+    print("1. Adicionar Nomes")
+    print("2. Listar Nomes")
+    print("3. Buscar Nome")
     print("4. Salvar e Sair")
 
     return input("Opção: ")
 
+
+# =====================================================
+# 8 - PROGRAMA PRINCIPAL
+# =====================================================
+
 if __name__ == "__main__":
+
     nomes = carregar_nome()
 
     while True:
+
         opcao = Menu
+
         if opcao == 1:
             try:
                 adicionar_nome(nome, input("Nome: "))
                 print("Adicionado!")
+
             except ValueError as e:
                 print(f"Erro: {e}")
-        
+
         elif opcao == "2":
             lista_nomes(nomes)
-        
+
         elif opcao == "3":
             busca = input("Buscar: ")
-            achou = buscar_nome(nome,busca)
-            print("Encontrado!")  if achou else "Não encontrado!"
+            achou = buscar_nome(nome, busca)
+            print("Encontrado!") if achou else "Não encontrado!"
 
         elif opcao == "4":
             salvar_nome(nomes)
